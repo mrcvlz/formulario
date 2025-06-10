@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Confirmación</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Resumen de datos</h1>
+  <div id="resumen"></div>
+  <script>
+    const datos = JSON.parse(localStorage.getItem('formData')) || {};
+    const div = document.getElementById('resumen');
+    if (Object.keys(datos).length === 0) {
+      div.innerHTML = '<p>No hay datos disponibles.</p>';
+    } else {
+      let html = '';
+      for (const key in datos) {
+        html += `<p><strong>${key}:</strong> ${datos[key]}</p>`;
+      }
+      div.innerHTML = html;
+    }
+  </script>
+</body>
+</html>
