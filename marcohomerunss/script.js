@@ -15,5 +15,5 @@ document.getElementById("form").addEventListener("submit", function (e) {
   }
 
   localStorage.setItem("formData", JSON.stringify(data));
-  window.location.href = "confirmation.html";
+  window.location.href = "confirmacion.html";
 });
